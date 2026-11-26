@@ -1,14 +1,16 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Instrument_Serif } from 'next/font/google'
+import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const instrument = Instrument_Serif({
-  subsets: ['latin'],
-  weight: '400',
-  style: ['normal', 'italic'],
-  variable: '--font-instrument',
+const bwFusiona = localFont({
+  src: '../public/fonts/bw-fusiona-medium.otf',
+  weight: '500',
+  style: 'normal',
+  variable: '--font-bw-fusiona',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -36,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${instrument.variable}`}>
+    <html lang="en" className={`${inter.variable} ${bwFusiona.variable}`}>
       <body className="grain antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

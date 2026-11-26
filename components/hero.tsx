@@ -19,7 +19,7 @@ export function Hero() {
           <p className="animate-fade-up text-[10px] uppercase tracking-[0.32em] text-accent" style={{ animationDelay: '100ms' }}>
             Café Himalaya
           </p>
-          <h1 className="mt-5 font-serif text-[clamp(3.5rem,10vw,8.5rem)] leading-[0.88] tracking-[-0.045em] text-balance">
+          <h1 className="mt-5 font-serif text-[clamp(2.25rem,10vw,8.5rem)] leading-[0.88] tracking-[-0.045em] text-balance">
             <span className="animate-rise block" style={{ animationDelay: '250ms' }}>
               A taste of
             </span>
