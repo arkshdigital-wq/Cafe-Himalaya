@@ -29,13 +29,13 @@ export function Ritual() {
       <div className="mx-auto mt-24 grid max-w-7xl items-center gap-10 px-6 md:mt-32 md:grid-cols-2 md:px-10">
         <Reveal className="max-w-lg">
           <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-            <span className="text-accent">Fig. 03</span> — Coffee, drawn slowly
+            <span className="text-accent">Fig. 03</span> — The coffee bar
           </p>
           <h2 className="mt-6 font-serif text-4xl leading-[1.05] tracking-tight text-balance md:text-6xl">
-            A little room for <em className="text-accent">the ritual.</em>
+            Good coffee, <em className="text-accent">unhurried.</em>
           </h2>
           <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
-            Fresh-ground beans, a careful pull, and a warm cup shared at the table. Good things take the time they take.
+            Fresh-ground beans, a balanced pull, and a warm cup at the table.
           </p>
         </Reveal>
         <Reveal delay={150} className="flex justify-center">
