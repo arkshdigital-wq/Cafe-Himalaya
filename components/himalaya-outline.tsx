@@ -22,30 +22,10 @@ function ridgeShape(position: number, frequency: number, phase: number) {
   const cyclePosition = position * frequency + phase
   const cycleIndex = Math.floor(cyclePosition)
   const progress = cyclePosition - cycleIndex
-  const landmarks = [
-    [0, 0.06],
-    [0.13, 0.78],
-    [0.25, 0.09],
-    [0.43, 0.58],
-    [0.52, 0.05],
-    [0.72, 1],
-    [0.82, 0.12],
-    [0.93, 0.68],
-    [1, 0.06],
-  ] as const
-
-  for (let index = 1; index < landmarks.length; index++) {
-    const [rightPosition, rightHeight] = landmarks[index]
-    if (progress <= rightPosition) {
-      const [leftPosition, leftHeight] = landmarks[index - 1]
-      const segmentProgress = (progress - leftPosition) / (rightPosition - leftPosition)
-      const peakVariation = Math.abs(Math.sin((cycleIndex + phase) * 2.17 + index * 1.41)) * 0.18
-      const adjustedRightHeight = rightHeight > 0.2 ? rightHeight * (1 - peakVariation) : rightHeight
-      return leftHeight + (adjustedRightHeight - leftHeight) * segmentProgress
-    }
-  }
-
-  return 0.06
+  const summit = 0.38 + Math.abs(Math.sin(cycleIndex * 1.73 + phase)) * 0.2
+  const peakHeight = 0.7 + Math.abs(Math.sin(cycleIndex * 2.37 + phase)) * 0.3
+  const slope = progress < summit ? progress / summit : (1 - progress) / (1 - summit)
+  return peakHeight * Math.pow(Math.max(0, slope), 1.2)
 }
 
 export function HimalayaOutline() {
