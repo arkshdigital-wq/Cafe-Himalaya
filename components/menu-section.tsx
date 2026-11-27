@@ -29,8 +29,8 @@ export function MenuSection() {
   const items = menu[category]
 
   return (
-    <section id="menu" className="bg-foreground py-24 text-background md:py-36">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
+    <section id="menu" className="menu-paper-texture relative isolate bg-foreground py-24 text-background md:py-36">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
             <Reveal className="text-[11px] uppercase tracking-[0.25em] text-background/60">

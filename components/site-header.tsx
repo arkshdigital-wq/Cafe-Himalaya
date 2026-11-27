@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { HimalayaOutline } from '@/components/himalaya-outline'
 import { cn } from '@/lib/utils'
 
 const links = [
@@ -31,9 +30,6 @@ export function SiteHeader() {
           : 'bg-background/90 py-4 text-foreground backdrop-blur-md md:bg-transparent md:py-6',
       )}
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-16 opacity-60 md:h-20" aria-hidden="true">
-        <HimalayaOutline />
-      </div>
       <div className="relative z-10 mx-auto flex max-w-7xl items-center px-6 md:px-10">
         <a
           href="#top"
