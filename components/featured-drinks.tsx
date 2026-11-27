@@ -23,7 +23,7 @@ export function FeaturedDrinks() {
   return (
     <section
       id="featured-drinks"
-      className="bg-background py-12 text-foreground md:py-20"
+      className="bg-background py-10 text-foreground md:py-16"
     >
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <Reveal as="h2" className="mb-4 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">

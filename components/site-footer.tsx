@@ -4,7 +4,7 @@ import { Reveal } from './reveal'
 
 export function SiteFooter() {
   return (
-    <footer className="relative isolate overflow-hidden bg-foreground pt-20 pb-8 text-background">
+    <footer className="relative isolate overflow-hidden bg-foreground pt-16 pb-8 text-background">
       <FooterIllustration />
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
         <div className="flex flex-col items-center justify-between gap-7 md:flex-row md:gap-8">
@@ -29,7 +29,7 @@ export function SiteFooter() {
             </ul>
           </nav>
         </div>
-        <section className="mt-20 border-y border-background/15 py-10 md:py-12" aria-labelledby="footer-origin-title">
+        <section className="mt-16 border-y border-background/15 py-8 md:py-10" aria-labelledby="footer-origin-title">
           <Reveal>
             <div className="grid items-end gap-5 md:grid-cols-[1.2fr_0.8fr] md:gap-10">
               <div>

@@ -29,7 +29,7 @@ export function MenuSection() {
   const items = menu[category]
 
   return (
-    <section id="menu" className="menu-paper-texture relative isolate bg-foreground py-24 text-background md:py-36">
+    <section id="menu" className="menu-paper-texture relative isolate bg-foreground py-20 text-background md:py-28">
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
@@ -67,7 +67,7 @@ export function MenuSection() {
           </Reveal>
         </div>
 
-        <div className="mt-16 grid gap-12 md:grid-cols-12">
+        <div className="mt-12 grid gap-8 md:grid-cols-12">
           <ul key={category} className="md:col-span-7" role="tabpanel" aria-label={category}>
             {items.map((item, i) => (
               <li

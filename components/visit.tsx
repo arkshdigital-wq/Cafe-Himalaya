@@ -9,8 +9,8 @@ const hours = [
 
 export function Visit() {
   return (
-    <section id="visit" className="bg-card py-24 md:py-36">
-      <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-12 md:px-10">
+    <section id="visit" className="bg-card py-20 md:py-28">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-12 md:px-10">
         <div className="md:col-span-6">
           <Reveal className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             <span className="text-accent">§ 04</span> — Visit
@@ -35,7 +35,7 @@ export function Visit() {
           </Reveal>
         </div>
 
-        <div className="grid gap-10 sm:grid-cols-2 md:col-span-6">
+        <div className="grid gap-8 sm:grid-cols-2 md:col-span-6">
           <Reveal delay={100}>
             <h3 className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">Address</h3>
             <address className="mt-4 font-serif text-2xl not-italic leading-snug">
