@@ -1,5 +1,5 @@
-import { HimalayaOutline } from '@/components/himalaya-outline'
 import { ChaiGlass } from '@/components/chai-glass'
+import { HimalayaOutline } from '@/components/himalaya-outline'
 
 const offerings = [
   { number: '01', name: 'Café', detail: 'A little Kathmandu in JVM', mobilePosition: 'col-start-1 row-start-1' },
@@ -11,15 +11,15 @@ const offerings = [
 export function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-background text-foreground">
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-0 -translate-y-4 h-80 opacity-40 md:h-96" aria-hidden="true">
-        <HimalayaOutline />
-      </div>
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-36 pb-12 md:px-10 md:pt-44 md:pb-16">
-        <div className="mx-auto max-w-4xl py-14 text-center md:py-20">
-          <p className="animate-fade-up text-[10px] uppercase tracking-[0.32em] text-accent" style={{ animationDelay: '100ms' }}>
+        <div className="relative mx-auto max-w-4xl py-14 text-center md:py-20">
+          <div className="pointer-events-none absolute left-1/2 top-14 z-0 h-10 w-[min(92vw,72rem)] -translate-x-1/2 opacity-50 md:top-20 md:h-12" aria-hidden="true">
+            <HimalayaOutline />
+          </div>
+          <p className="animate-fade-up relative z-10 text-[10px] uppercase tracking-[0.32em] text-accent" style={{ animationDelay: '100ms' }}>
             Café Himalaya
           </p>
-          <h1 className="mt-5 font-serif text-[clamp(2.25rem,10vw,8.5rem)] leading-[0.88] tracking-[-0.045em] text-balance">
+          <h1 className="relative z-10 mt-5 font-serif text-[clamp(2.25rem,10vw,8.5rem)] leading-[0.88] tracking-[-0.045em] text-balance">
             <span className="animate-rise block" style={{ animationDelay: '250ms' }}>
               A taste of
             </span>

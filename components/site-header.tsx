@@ -24,21 +24,17 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-all duration-500',
+        'isolate fixed inset-x-0 top-0 z-50 transition-all duration-500',
         scrolled
           ? 'bg-background/90 py-3 text-foreground backdrop-blur-md border-b border-border'
           : 'bg-background/90 py-4 text-foreground backdrop-blur-md md:bg-transparent md:py-6',
       )}
     >
-      <div className="relative mx-auto flex max-w-7xl items-center px-6 md:px-10">
+      <div className="relative z-10 mx-auto flex max-w-7xl items-center px-6 md:px-10">
         <a
           href="#top"
-          aria-hidden={scrolled}
-          tabIndex={scrolled ? -1 : undefined}
-          className={cn(
-            'absolute left-1/2 top-1/2 z-10 block -translate-x-1/2 -translate-y-1/2 overflow-hidden transition-[max-height,opacity] duration-300 hover:opacity-80',
-            scrolled ? 'pointer-events-none max-h-0 opacity-0' : 'max-h-12 opacity-100 md:max-h-14',
-          )}
+          aria-label="Café Himalaya home"
+          className="absolute left-1/2 top-1/2 z-10 block -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 hover:opacity-80"
         >
           <Image
             src="/images/logo.png"
@@ -46,7 +42,7 @@ export function SiteHeader() {
             width={345}
             height={104}
             priority
-            className={cn('w-auto transition-all duration-500', scrolled ? 'h-8 md:h-9' : 'h-9 md:h-13')}
+            className="h-8 w-auto transition-all duration-300 md:h-10"
           />
         </a>
         <nav aria-label="Primary" className="w-full">
