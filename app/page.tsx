@@ -2,7 +2,6 @@ import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
 import { Marquee } from '@/components/marquee'
 import { Story } from '@/components/story'
-import { TastingFlight } from '@/components/tasting-flight'
 import { MenuSection } from '@/components/menu-section'
 import { Ritual } from '@/components/ritual'
 import { Visit } from '@/components/visit'
@@ -16,7 +15,6 @@ export default function Page() {
         <Hero />
         <Marquee />
         <Story />
-        <TastingFlight />
         <MenuSection />
         <Ritual />
         <Visit />

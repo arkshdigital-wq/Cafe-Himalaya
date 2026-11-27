@@ -14,38 +14,17 @@ type Ridge = {
 }
 
 const ridges: Ridge[] = [
-  { base: 0.92, amplitude: 0.76, frequency: 5.5, phase: 0.08, speed: 0.004, parallax: 4, color: '#75432d', opacity: 0.58 },
-  { base: 1.12, amplitude: 0.94, frequency: 4.4, phase: 0.36, speed: 0.006, parallax: 7, color: '#b4532a', opacity: 0.22 },
+  { base: 0.64, amplitude: 0.46, frequency: 3.6, phase: 0.4, speed: 0.022, parallax: 4, color: '#75432d', opacity: 0.72 },
 ]
 
 function ridgeShape(position: number, frequency: number, phase: number) {
-  const cyclePosition = position * frequency + phase
-  const cycleIndex = Math.floor(cyclePosition)
-  const progress = cyclePosition - cycleIndex
-  const landmarks = [
-    [0, 0.06],
-    [0.13, 0.78],
-    [0.25, 0.09],
-    [0.43, 0.58],
-    [0.52, 0.05],
-    [0.72, 1],
-    [0.82, 0.12],
-    [0.93, 0.68],
-    [1, 0.06],
-  ] as const
-
-  for (let index = 1; index < landmarks.length; index++) {
-    const [rightPosition, rightHeight] = landmarks[index]
-    if (progress <= rightPosition) {
-      const [leftPosition, leftHeight] = landmarks[index - 1]
-      const segmentProgress = (progress - leftPosition) / (rightPosition - leftPosition)
-      const peakVariation = Math.abs(Math.sin((cycleIndex + phase) * 2.17 + index * 1.41)) * 0.18
-      const adjustedRightHeight = rightHeight > 0.2 ? rightHeight * (1 - peakVariation) : rightHeight
-      return leftHeight + (adjustedRightHeight - leftHeight) * segmentProgress
-    }
-  }
-
-  return 0.06
+  const wave = (value: number) => 1 - Math.abs(Math.sin(value))
+  const shape =
+    (wave(position * frequency + phase) +
+      0.45 * wave(position * frequency * 2.3 + phase + 1.7) +
+      0.2 * wave(position * frequency * 5.1 + phase + 3)) /
+    1.65
+  return Math.pow(shape, 1.2)
 }
 
 export function HimalayaOutline() {
@@ -85,7 +64,7 @@ export function HimalayaOutline() {
         context.strokeStyle = ridge.color
         context.globalAlpha = ridge.opacity
         context.lineWidth = 1.15
-        context.lineJoin = 'miter'
+        context.lineJoin = 'round'
         context.lineCap = 'round'
         context.stroke()
       })
