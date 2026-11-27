@@ -64,7 +64,7 @@ export function HimalayaOutline() {
         }
         context.strokeStyle = ridge.color
         context.globalAlpha = ridge.opacity
-        context.lineWidth = 1.15
+        context.lineWidth = 1.3
         context.lineJoin = 'round'
         context.lineCap = 'round'
         context.stroke()
