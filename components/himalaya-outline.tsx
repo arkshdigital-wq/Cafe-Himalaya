@@ -14,18 +14,17 @@ type Ridge = {
 }
 
 const ridges: Ridge[] = [
-  { base: 0.92, amplitude: 0.76, frequency: 5.5, phase: 0.08, speed: 0.004, parallax: 4, color: '#75432d', opacity: 0.58 },
-  { base: 1.12, amplitude: 0.94, frequency: 4.4, phase: 0.36, speed: 0.006, parallax: 7, color: '#b4532a', opacity: 0.22 },
+  { base: 0.64, amplitude: 0.46, frequency: 3.6, phase: 0.4, speed: 0.022, parallax: 4, color: '#75432d', opacity: 0.72 },
 ]
 
 function ridgeShape(position: number, frequency: number, phase: number) {
-  const cyclePosition = position * frequency + phase
-  const cycleIndex = Math.floor(cyclePosition)
-  const progress = cyclePosition - cycleIndex
-  const summit = 0.38 + Math.abs(Math.sin(cycleIndex * 1.73 + phase)) * 0.2
-  const peakHeight = 0.7 + Math.abs(Math.sin(cycleIndex * 2.37 + phase)) * 0.3
-  const slope = progress < summit ? progress / summit : (1 - progress) / (1 - summit)
-  return peakHeight * Math.pow(Math.max(0, slope), 1.2)
+  const wave = (value: number) => 1 - Math.abs(Math.sin(value))
+  const shape =
+    (wave(position * frequency + phase) +
+      0.45 * wave(position * frequency * 2.3 + phase + 1.7) +
+      0.2 * wave(position * frequency * 5.1 + phase + 3)) /
+    1.65
+  return Math.pow(shape, 1.2)
 }
 
 export function HimalayaOutline() {
@@ -65,7 +64,7 @@ export function HimalayaOutline() {
         context.strokeStyle = ridge.color
         context.globalAlpha = ridge.opacity
         context.lineWidth = 1.15
-        context.lineJoin = 'miter'
+        context.lineJoin = 'round'
         context.lineCap = 'round'
         context.stroke()
       })
