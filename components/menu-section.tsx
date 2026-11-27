@@ -22,24 +22,6 @@ const menu: Record<string, Item[]> = {
   ],
 }
 
-const featuredDrinks = [
-  {
-    name: 'Chai',
-    image: '/images/featured-cardamom-chai.jpg',
-    alt: 'Masala chai poured into a glass beside cardamom pods.',
-  },
-  {
-    name: 'Coffee',
-    image: '/images/featured-latte.jpg',
-    alt: 'Overhead view of a heart-patterned latte in a white cup.',
-  },
-  {
-    name: 'Smoothies',
-    image: '/images/featured-banana-smoothie.webp',
-    alt: 'Banana smoothie topped with peanut butter, served in a glass.',
-  },
-]
-
 export function MenuSection() {
   const categories = Object.keys(menu)
   const [category, setCategory] = useState(categories[0])
@@ -84,28 +66,6 @@ export function MenuSection() {
             </div>
           </Reveal>
         </div>
-
-        <Reveal className="mt-16">
-          <p className="mb-5 text-[10px] uppercase tracking-[0.25em] text-background/50">A few café favourites</p>
-          <div className="grid gap-5 sm:grid-cols-3">
-            {featuredDrinks.map((drink) => (
-              <figure key={drink.name} className="group min-w-0">
-                <div className="relative aspect-[4/5] overflow-hidden bg-background/5">
-                  <Image
-                    src={drink.image}
-                    alt={drink.alt}
-                    fill
-                    sizes="(max-width: 639px) 88vw, (max-width: 1023px) 30vw, 360px"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                  />
-                </div>
-                <figcaption className="border-b border-background/20 py-4">
-                  <h3 className="font-serif text-2xl">{drink.name}</h3>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </Reveal>
 
         <div className="mt-16 grid gap-12 md:grid-cols-12">
           <ul key={category} className="md:col-span-7" role="tabpanel" aria-label={category}>

@@ -184,7 +184,7 @@
 }
 
 .reveal.is-visible .coffee-machine-art {
-  animation: coffee-art-draw-in 1.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: coffee-art-draw-in 2.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .reveal.is-visible .coffee-machine-art:hover {
@@ -209,13 +209,13 @@
   stroke: url(#chai-glass-fade);
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: chai-glass-line-draw 1.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: chai-glass-line-draw 2.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .chai-glass.is-in-view .chai-glass-highlight {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: chai-glass-line-draw 1s cubic-bezier(0.22, 1, 0.36, 1) 350ms both;
+  animation: chai-glass-line-draw 1.3s cubic-bezier(0.22, 1, 0.36, 1) 450ms both;
 }
 
 @keyframes chai-glass-line-draw {
@@ -240,7 +240,7 @@
 .story-chai-art.is-in-view .story-draw {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: story-line-draw 1.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: story-line-draw 2.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .story-chai-art.is-in-view .story-art-main {
@@ -249,7 +249,7 @@
 
 .story-chai-art.is-in-view .story-art-band {
   stroke: var(--chai-line);
-  animation: story-line-draw 900ms cubic-bezier(0.22, 1, 0.36, 1) 450ms both;
+  animation: story-line-draw 1.2s cubic-bezier(0.22, 1, 0.36, 1) 550ms both;
 }
 
 .story-chai-art.is-in-view .story-art-wisp {
