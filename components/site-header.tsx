@@ -42,7 +42,7 @@ export function SiteHeader() {
             width={345}
             height={104}
             priority
-            className="h-8 w-auto transition-all duration-300 md:h-10"
+            className="h-9 w-auto transition-all duration-300 md:h-12"
           />
         </a>
         <nav aria-label="Primary" className="w-full">
