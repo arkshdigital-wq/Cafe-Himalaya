@@ -45,13 +45,15 @@ function ridgeShape(position: number) {
     const distance = ((wrappedPosition - peak.center + 1.5) % 1) - 0.5
     const reach = distance < 0 ? peak.leftWidth : peak.rightWidth
     const shoulder = Math.max(0, 1 - Math.abs(distance) / reach)
-    highestPeak = Math.max(highestPeak, peak.height * Math.pow(shoulder, 2.2))
+    const softenedShoulder = shoulder * shoulder * (3 - 2 * shoulder)
+    const summitShape = Math.pow(softenedShoulder, 1.2 + peak.height * 0.65)
+    highestPeak = Math.max(highestPeak, peak.height * summitShape)
   })
 
   const detail =
     Math.sin(wrappedPosition * Math.PI * 58 + 0.4) * 0.018 +
     Math.sin(wrappedPosition * Math.PI * 94 + 2.1) * 0.008
-  const contour = 0.1 + highestPeak * 0.86 + detail * Math.sqrt(highestPeak)
+  const contour = 0.1 + highestPeak * 0.86 + detail * Math.pow(highestPeak, 2.4)
   return Math.max(0.1, Math.min(0.99, contour))
 }
 
