@@ -5,27 +5,54 @@ import { useEffect, useRef } from 'react'
 type Ridge = {
   base: number
   amplitude: number
-  frequency: number
-  phase: number
   speed: number
   parallax: number
   color: string
   opacity: number
 }
 
-const ridges: Ridge[] = [
-  { base: 0.58, amplitude: 0.38, frequency: 7.3, phase: 0.7, speed: 0.014, parallax: 2, color: '#8b9493', opacity: 0.35 },
-  { base: 0.78, amplitude: 0.78, frequency: 9.42, phase: 0, speed: 0.022, parallax: 4, color: '#75432d', opacity: 0.72 },
+type Peak = {
+  center: number
+  height: number
+  leftWidth: number
+  rightWidth: number
+}
+
+const ridge: Ridge = {
+  base: 0.86,
+  amplitude: 0.82,
+  speed: 0.006,
+  parallax: 4,
+  color: '#75432d',
+  opacity: 0.72,
+}
+
+const peaks: Peak[] = [
+  { center: 0.035, height: 0.56, leftWidth: 0.13, rightWidth: 0.09 },
+  { center: 0.15, height: 0.3, leftWidth: 0.035, rightWidth: 0.045 },
+  { center: 0.25, height: 0.82, leftWidth: 0.1, rightWidth: 0.19 },
+  { center: 0.45, height: 0.38, leftWidth: 0.05, rightWidth: 0.065 },
+  { center: 0.61, height: 0.7, leftWidth: 0.2, rightWidth: 0.11 },
+  { center: 0.77, height: 0.27, leftWidth: 0.035, rightWidth: 0.05 },
+  { center: 0.87, height: 1, leftWidth: 0.08, rightWidth: 0.16 },
 ]
 
-function ridgeShape(position: number, frequency: number, phase: number) {
-  const wave = (value: number) => 1 - Math.abs(Math.sin(value))
-  const shape =
-    (wave(position * frequency + phase) +
-      0.45 * wave(position * frequency * 2.3 + phase + 1.7) +
-      0.2 * wave(position * frequency * 5.1 + phase + 3)) /
-    1.65
-  return Math.pow(shape, 2.2)
+function ridgeShape(position: number) {
+  const wrappedPosition = ((position % 1) + 1) % 1
+  let highestPeak = 0
+
+  peaks.forEach((peak) => {
+    const distance = ((wrappedPosition - peak.center + 1.5) % 1) - 0.5
+    const reach = distance < 0 ? peak.leftWidth : peak.rightWidth
+    const shoulder = Math.max(0, 1 - Math.abs(distance) / reach)
+    highestPeak = Math.max(highestPeak, peak.height * Math.pow(shoulder, 2.2))
+  })
+
+  const detail =
+    Math.sin(wrappedPosition * Math.PI * 58 + 0.4) * 0.018 +
+    Math.sin(wrappedPosition * Math.PI * 94 + 2.1) * 0.008
+  const contour = 0.1 + highestPeak * 0.86 + detail * Math.sqrt(highestPeak)
+  return Math.max(0.1, Math.min(0.99, contour))
 }
 
 export function HimalayaOutline() {
@@ -48,27 +75,21 @@ export function HimalayaOutline() {
       const seconds = time / 1000
       const segments = Math.ceil(width / 3) + 2
 
-      ridges.forEach((ridge) => {
-        const offset = pointer.current * ridge.parallax
-        context.beginPath()
-        for (let i = 0; i < segments; i++) {
-          const x = (i - 1) * 3
-          const elevation = ridgeShape(
-            (x + offset) / Math.max(width, 1) + seconds * ridge.speed,
-            ridge.frequency,
-            ridge.phase,
-          )
-          const y = height * ridge.base - elevation * height * ridge.amplitude
-          if (i === 0) context.moveTo(x, y)
-          else context.lineTo(x, y)
-        }
-        context.strokeStyle = ridge.color
-        context.globalAlpha = ridge.opacity
-        context.lineWidth = 1.3
-        context.lineJoin = 'round'
-        context.lineCap = 'round'
-        context.stroke()
-      })
+      const offset = pointer.current * ridge.parallax
+      context.beginPath()
+      for (let i = 0; i < segments; i++) {
+        const x = (i - 1) * 3
+        const elevation = ridgeShape((x + offset) / Math.max(width, 1) + seconds * ridge.speed)
+        const y = height * ridge.base - elevation * height * ridge.amplitude
+        if (i === 0) context.moveTo(x, y)
+        else context.lineTo(x, y)
+      }
+      context.strokeStyle = ridge.color
+      context.globalAlpha = ridge.opacity
+      context.lineWidth = 1.3
+      context.lineJoin = 'round'
+      context.lineCap = 'round'
+      context.stroke()
       context.globalAlpha = 1
     }
 
