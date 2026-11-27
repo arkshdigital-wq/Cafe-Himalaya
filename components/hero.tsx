@@ -13,7 +13,7 @@ export function Hero() {
     <section id="top" className="relative isolate overflow-hidden bg-background text-foreground">
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-36 pb-12 md:px-10 md:pt-44 md:pb-16">
         <div className="relative mx-auto max-w-4xl py-14 text-center md:py-20">
-          <div className="pointer-events-none absolute left-1/2 top-14 z-0 h-10 w-screen max-w-none -translate-x-1/2 opacity-50 md:top-20 md:h-12" aria-hidden="true">
+          <div className="pointer-events-none absolute left-1/2 -top-10 z-0 h-28 w-screen max-w-none -translate-x-1/2 opacity-50 md:-top-5 md:h-32" aria-hidden="true">
             <HimalayaOutline />
           </div>
           <p className="animate-fade-up relative z-10 text-[10px] uppercase tracking-[0.32em] text-accent" style={{ animationDelay: '100ms' }}>
