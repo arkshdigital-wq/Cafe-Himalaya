@@ -24,22 +24,19 @@ const menu: Record<string, Item[]> = {
 
 const featuredDrinks = [
   {
-    name: 'Café Latte',
-    description: 'A little heart in every cup.',
+    name: 'Chai',
+    image: '/images/featured-cardamom-chai.jpg',
+    alt: 'Masala chai poured into a glass beside cardamom pods.',
+  },
+  {
+    name: 'Coffee',
     image: '/images/featured-latte.jpg',
     alt: 'Overhead view of a heart-patterned latte in a white cup.',
   },
   {
-    name: 'Banana Smoothie',
-    description: 'Creamy, cool, and made to linger.',
+    name: 'Smoothies',
     image: '/images/featured-banana-smoothie.webp',
     alt: 'Banana smoothie topped with peanut butter, served in a glass.',
-  },
-  {
-    name: 'Cardamom Chai',
-    description: 'A slow pour with a little spice.',
-    image: '/images/featured-cardamom-chai.jpg',
-    alt: 'Masala chai poured into a glass beside cardamom pods.',
   },
 ]
 
@@ -104,7 +101,6 @@ export function MenuSection() {
                 </div>
                 <figcaption className="border-b border-background/20 py-4">
                   <h3 className="font-serif text-2xl">{drink.name}</h3>
-                  <p className="mt-1 text-sm text-background/60">{drink.description}</p>
                 </figcaption>
               </figure>
             ))}
