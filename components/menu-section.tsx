@@ -72,11 +72,15 @@ export function MenuSection() {
             {items.map((item, i) => (
               <li
                 key={item.name}
-                className="animate-fade-up border-t border-background/20 last:border-b"
+                className={cn(
+                  'animate-fade-up border-t border-background/20 transition-colors duration-300 last:border-b',
+                  active === i ? 'bg-accent/10' : 'bg-transparent',
+                )}
                 style={{ animationDelay: `${i * 80}ms` }}
               >
                 <button
                   type="button"
+                  aria-pressed={active === i}
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
                   onClick={() => setActive(i)}

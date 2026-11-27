@@ -1,4 +1,3 @@
-import { HimalayaOutline } from '@/components/himalaya-outline'
 import { ChaiGlass } from '@/components/chai-glass'
 
 const offerings = [
@@ -11,9 +10,6 @@ const offerings = [
 export function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-background text-foreground">
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-0 -translate-y-4 h-80 opacity-40 md:h-96" aria-hidden="true">
-        <HimalayaOutline />
-      </div>
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-36 pb-12 md:px-10 md:pt-44 md:pb-16">
         <div className="mx-auto max-w-4xl py-14 text-center md:py-20">
           <p className="animate-fade-up text-[10px] uppercase tracking-[0.32em] text-accent" style={{ animationDelay: '100ms' }}>
