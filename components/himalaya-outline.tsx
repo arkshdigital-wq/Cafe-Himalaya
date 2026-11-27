@@ -14,7 +14,7 @@ type Ridge = {
 }
 
 const ridges: Ridge[] = [
-  { base: 0.72, amplitude: 0.82, frequency: 9.42, phase: 0, speed: 0.022, parallax: 4, color: '#75432d', opacity: 0.72 },
+  { base: 0.64, amplitude: 0.82, frequency: 9.42, phase: 0, speed: 0.022, parallax: 4, color: '#75432d', opacity: 0.72 },
 ]
 
 function ridgeShape(position: number, frequency: number, phase: number) {
@@ -24,7 +24,7 @@ function ridgeShape(position: number, frequency: number, phase: number) {
       0.45 * wave(position * frequency * 2.3 + phase + 1.7) +
       0.2 * wave(position * frequency * 5.1 + phase + 3)) /
     1.65
-  return Math.pow(shape, 1.2)
+  return Math.pow(shape, 1.8)
 }
 
 export function HimalayaOutline() {
