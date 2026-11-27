@@ -14,7 +14,7 @@ type Ridge = {
 }
 
 const ridges: Ridge[] = [
-  { base: 0.64, amplitude: 0.62, frequency: 9.2, phase: 0.4, speed: 0.022, parallax: 4, color: '#75432d', opacity: 0.72 },
+  { base: 0.72, amplitude: 0.82, frequency: 9.42, phase: 0, speed: 0.022, parallax: 4, color: '#75432d', opacity: 0.72 },
 ]
 
 function ridgeShape(position: number, frequency: number, phase: number) {
