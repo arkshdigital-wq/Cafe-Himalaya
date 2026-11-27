@@ -15,18 +15,9 @@ export function Ritual() {
         <Reveal className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
           <span className="text-accent">§ 03</span> — The Ritual
         </Reveal>
-
-        <blockquote className="mx-auto mt-12 max-w-5xl text-center">
-          <Reveal as="p" className="font-serif text-4xl leading-[1.1] tracking-tight text-balance md:text-7xl">
-            &ldquo;Good chai isn&apos;t made. It&apos;s <em className="text-accent">waited for.</em>&rdquo;
-          </Reveal>
-          <Reveal as="footer" delay={150} className="mt-8 text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-            — Ammi, head of the pot
-          </Reveal>
-        </blockquote>
       </div>
 
-      <div className="mx-auto mt-24 grid max-w-7xl items-center gap-10 px-6 md:mt-32 md:grid-cols-2 md:px-10">
+      <div className="mx-auto mt-12 grid max-w-7xl items-center gap-10 px-6 md:mt-16 md:grid-cols-2 md:px-10">
         <Reveal className="max-w-lg">
           <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             <span className="text-accent">Fig. 03</span> — The coffee bar
