@@ -6,7 +6,7 @@
 
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+  --font-serif: var(--font-bw-fusiona), ui-sans-serif, system-ui, sans-serif;
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -164,6 +164,11 @@
   stroke-width: 1.15;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.coffee-machine-art {
+  display: block;
+  max-width: 38rem;
 }
 
 .chai-glass {
