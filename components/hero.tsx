@@ -11,8 +11,8 @@ const offerings = [
 export function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-background text-foreground">
-      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-36 pb-12 md:px-10 md:pt-44 md:pb-16">
-        <div className="relative mx-auto max-w-4xl py-14 text-center md:py-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-10 md:px-10 md:pt-40 md:pb-12">
+        <div className="relative mx-auto max-w-4xl py-12 text-center md:py-16">
           <div className="pointer-events-none absolute left-1/2 -top-10 z-0 h-28 w-screen max-w-none -translate-x-1/2 opacity-50 md:-top-5 md:h-32" aria-hidden="true">
             <HimalayaOutline />
           </div>
@@ -32,7 +32,7 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="mx-auto mb-10 grid max-w-5xl grid-cols-2 items-center gap-x-4 gap-y-2 pb-3 text-[10px] uppercase tracking-[0.24em] text-muted-foreground sm:grid-cols-3 sm:gap-4">
+        <div className="mx-auto mb-8 grid max-w-5xl grid-cols-2 items-center gap-x-4 gap-y-2 pb-3 text-[10px] uppercase tracking-[0.24em] text-muted-foreground sm:grid-cols-3 sm:gap-4">
           <span className="text-left">From the Himalayas</span>
           <span className="hidden text-center sm:block">Kathmandu spirit · Dubai warmth</span>
           <span className="text-right">Jumeirah Village</span>
@@ -41,7 +41,7 @@ export function Hero() {
 
         <div
           id="offerings"
-          className="mx-auto mb-10 grid max-w-5xl grid-cols-2 grid-rows-2 items-center gap-x-3 gap-y-2 pb-3 sm:grid-cols-[repeat(4,minmax(0,1fr))_16rem] sm:grid-rows-1 sm:gap-4"
+          className="mx-auto mb-8 grid max-w-5xl grid-cols-2 grid-rows-2 items-center gap-x-3 gap-y-2 pb-3 sm:grid-cols-[repeat(4,minmax(0,1fr))_16rem] sm:grid-rows-1 sm:gap-4"
         >
           {offerings.map((item) => (
             <a

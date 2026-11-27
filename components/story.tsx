@@ -10,7 +10,7 @@ const stats = [
 
 export function Story() {
   return (
-    <section id="story" className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-36">
+    <section id="story" className="mx-auto max-w-7xl px-6 py-20 md:px-10 md:py-28">
       <div className="grid items-center gap-10 md:grid-cols-12">
         <div className="md:col-span-6">
           <StoryChaiArt />
@@ -26,9 +26,9 @@ export function Story() {
         </div>
       </div>
 
-      <Reveal variant="line" className="my-16 h-px bg-foreground" />
+      <Reveal variant="line" className="my-12 h-px bg-foreground" />
 
-      <div className="grid gap-12 md:grid-cols-12">
+      <div className="grid gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
           <ParallaxImage
             src="/images/spices.png"
@@ -40,7 +40,7 @@ export function Story() {
             Fig. 02 — What goes in the pot
           </p>
         </div>
-        <div className="flex flex-col justify-between gap-12 md:col-span-6 md:col-start-7">
+        <div className="flex flex-col justify-between gap-8 md:col-span-6 md:col-start-7">
           <div className="columns-1 gap-10 leading-relaxed text-muted-foreground lg:columns-2">
             <Reveal as="p" className="drop-cap mb-6 text-foreground">
               Every morning at six, the first pot of Nepali chiya goes on. Strong tea, crushed green cardamom,
@@ -55,7 +55,7 @@ export function Story() {
             </Reveal>
           </div>
 
-          <dl className="grid grid-cols-3 gap-6 border-t border-foreground pt-8">
+          <dl className="grid grid-cols-3 gap-6 border-t border-foreground pt-6">
             {stats.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 120}>
                 <dt className="sr-only">{stat.label}</dt>

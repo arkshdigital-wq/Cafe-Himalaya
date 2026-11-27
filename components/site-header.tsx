@@ -26,8 +26,8 @@ export function SiteHeader() {
       className={cn(
         'isolate fixed inset-x-0 top-0 z-50 transition-all duration-500',
         scrolled
-          ? 'bg-background/90 py-3 text-foreground backdrop-blur-md border-b border-border'
-          : 'bg-background/90 py-4 text-foreground backdrop-blur-md md:bg-transparent md:py-6',
+          ? 'bg-background/90 py-4 text-foreground backdrop-blur-md border-b border-border'
+          : 'bg-background/90 py-5 text-foreground backdrop-blur-md md:bg-transparent md:py-7',
       )}
     >
       <div className="relative z-10 mx-auto flex max-w-7xl items-center px-6 md:px-10">
@@ -42,7 +42,7 @@ export function SiteHeader() {
             width={345}
             height={104}
             priority
-            className="h-9 w-auto transition-all duration-300 md:h-12"
+            className="h-10 w-auto transition-all duration-300 md:h-14"
           />
         </a>
         <nav aria-label="Primary" className="w-full">

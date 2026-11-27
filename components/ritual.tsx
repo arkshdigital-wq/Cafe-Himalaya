@@ -10,14 +10,14 @@ const steps = [
 
 export function Ritual() {
   return (
-    <section id="ritual" className="py-24 md:py-36">
+    <section id="ritual" className="py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <Reveal className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
           <span className="text-accent">§ 03</span> — The Ritual
         </Reveal>
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-7xl items-center gap-10 px-6 md:mt-16 md:grid-cols-2 md:px-10">
+      <div className="mx-auto mt-10 grid max-w-7xl items-center gap-8 px-6 md:mt-12 md:grid-cols-2 md:px-10">
         <Reveal className="max-w-lg">
           <p className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
             <span className="text-accent">Fig. 03</span> — The coffee bar
@@ -37,11 +37,11 @@ export function Ritual() {
       <ParallaxImage
         src="/images/interior.png"
         alt="Warm interior of the chai house at dusk with pendant lights and wooden benches"
-        className="mt-20 h-[60vh] md:h-[85vh]"
+        className="mt-16 h-[60vh] md:h-[85vh]"
         strength={120}
       />
 
-      <div className="mx-auto mt-20 grid max-w-7xl gap-12 px-6 md:grid-cols-3 md:px-10">
+      <div className="mx-auto mt-16 grid max-w-7xl gap-8 px-6 md:grid-cols-3 md:px-10">
         {steps.map((step, i) => (
           <Reveal key={step.title} delay={i * 150} className="border-t border-foreground pt-6">
             <span className="font-serif text-lg italic text-accent">No. {i + 1}</span>
